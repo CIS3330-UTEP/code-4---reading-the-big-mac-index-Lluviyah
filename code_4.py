@@ -20,14 +20,14 @@ def get_the_cheapest_big_mac_price_by_year(year):
     df_result = df.query(query_t)
     idx_min = df_result['dollar_price'].idxmin()
     chepeast_bm = df_result.loc[idx_min]
-    return f"{chepeast_bm['name']}({chepeast_bm['iso_a3']}):${round(chepeast_bm['dollar_price'],2)}"
+    return f"{chepeast_bm['name']}({chepeast_bm['iso_a3']}): ${round(chepeast_bm['dollar_price'],2)}"
 
 def get_the_most_expensive_big_mac_price_by_year(year):
     query_t = f"(date >= '{year}-01-01' and date <= '{year}-12-31')"
     df_result = df.query(query_t)
     idx_max = df_result['dollar_price'].idxmax()
     chepeast_bm = df_result.loc[idx_max]
-    return f"{chepeast_bm['name']}({chepeast_bm['iso_a3']}):${round(chepeast_bm['dollar_price'],2)}"
+    return f"{chepeast_bm['name']}({chepeast_bm['iso_a3']}): ${round(chepeast_bm['dollar_price'],2)}"
 
 if __name__ == "__main__":
     c = 'arg'
